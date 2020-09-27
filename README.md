@@ -11,6 +11,10 @@
 
 3) This solution will ensure that vehicles do not cross a speed limit, so as to minimize accidents with animals, who cross the road, especially during monsoon.
 
+### Output
+
+<img src="https://github.com/akshitagupta15june/vehicle_speed_estimator/blob/master/gif_car1.gif" width="590px" height="360px">
+
 
 
 
