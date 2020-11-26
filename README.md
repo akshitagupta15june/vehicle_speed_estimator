@@ -1,3 +1,5 @@
+## Join official discord channel for discussion https://discord.gg/EjPGGpFY
+
 # Real Time Vehicle Detection, Tracking, and Speed Estimation
 
 ## Problem - Smart Movement tracking solution of People/Vehicles from Point A to point B 🚗🏃‍♂️
