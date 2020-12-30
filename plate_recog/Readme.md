@@ -18,5 +18,8 @@
 `python code.py`
 
 ## Screenshots:
-![Capture](plate_recog/Output_image/Capture.jpg)
-![Capture2](plate_recog/Output_image/Capture2.jpg)
+
+![1](Output_image/Capture.jpg)
+
+
+![2](Output_image/Capture2.jpg)
