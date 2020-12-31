@@ -11,4 +11,4 @@
 
 
 
-![Capture](GUI/Capture.jpg)
+![Capture](Capture.jpg)
