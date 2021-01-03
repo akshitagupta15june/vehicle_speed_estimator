@@ -42,7 +42,7 @@ def trackMultipleObjects():
     while True:
         start_time = time.time()
         rc, image = video.read()
-        if type(image) == type(None):
+        if type(image) is type(None):
             break
 
         image = cv2.resize(image, (WIDTH, HEIGHT))
