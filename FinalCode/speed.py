@@ -1,7 +1,6 @@
 import cv2
 import dlib
 import time
-import threading
 import math
 
 carCascade = cv2.CascadeClassifier('myhaar.xml')

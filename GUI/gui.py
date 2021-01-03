@@ -1,9 +1,8 @@
 import cv2
 import dlib
 import time
-import threading
 import math
-from tkinter import Tk,Label,Frame
+from tkinter import Tk,Label
 
 
 carCascade = cv2.CascadeClassifier('Classifier/myhaar.xml')
