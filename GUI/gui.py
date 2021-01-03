@@ -52,7 +52,7 @@ def trackMultipleObjects():
 
         carIDtoDelete = []
 
-        for carID in carTracker.keys():
+        for carID in carTracker:
             trackingQuality = carTracker[carID].update(image)
 
             if trackingQuality < 7:
@@ -93,7 +93,7 @@ def trackMultipleObjects():
 
                 matchCarID = None
 
-                for carID in carTracker.keys():
+                for carID in carTracker:
                     trackedPosition = carTracker[carID].get_position()
 
                     t_x = int(trackedPosition.left())
@@ -122,7 +122,7 @@ def trackMultipleObjects():
             
         # cv2.line(resultImage,(0,480),(1280,480),(255,0,0),5)
 
-        for carID in carTracker.keys():
+        for carID in carTracker:
             trackedPosition = carTracker[carID].get_position()
 
             t_x = int(trackedPosition.left())
@@ -142,7 +142,7 @@ def trackMultipleObjects():
 
         # cv2.putText(resultImage, 'FPS: ' + str(int(fps)), (620, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
 
-        for i in carLocation1.keys():
+        for i in carLocation1:
             if frameCounter % 1 == 0:
                 [x1, y1, w1, h1] = carLocation1[i]
                 [x2, y2, w2, h2] = carLocation2[i]
