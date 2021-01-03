@@ -136,11 +136,11 @@ def trackMultipleObjects():
 
                 # print 'new previous location: ' + str(carLocation1[i])
                 if [x1, y1, w1, h1] != [x2, y2, w2, h2]:
-                    if (speed[i] == None or speed[i] == 0) and y1 >= 275 and y1 <= 285:
+                    if (speed[i] is None or speed[i] == 0) and y1 >= 275 and y1 <= 285:
                         speed[i] = estimateSpeed([x1, y1, w1, h1], [x2, y2, w2, h2])
 
                     # if y1 > 275 and y1 < 285:
-                    if speed[i] != None and y1 >= 180:
+                    if speed[i] is not None and y1 >= 180:
                         cv2.putText(resultImage, str(int(speed[i])) + " km/hr", (int(x1 + w1 / 2), int(y1 - 5)),
                                     cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 2)
 
