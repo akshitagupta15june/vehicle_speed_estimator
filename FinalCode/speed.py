@@ -1,7 +1,6 @@
 import cv2
 import dlib
 import time
-import threading
 import math
 
 carCascade = cv2.CascadeClassifier('myhaar.xml')
@@ -40,7 +39,7 @@ def trackMultipleObjects():
     while True:
         start_time = time.time()
         rc, image = video.read()
-        if type(image) == type(None):
+        if type(image) is type(None):
             break
 
         image = cv2.resize(image, (WIDTH, HEIGHT))
@@ -50,7 +49,7 @@ def trackMultipleObjects():
 
         carIDtoDelete = []
 
-        for carID in carTracker.keys():
+        for carID in carTracker:
             trackingQuality = carTracker[carID].update(image)
 
             if trackingQuality < 7:
@@ -79,7 +78,7 @@ def trackMultipleObjects():
 
                 matchCarID = None
 
-                for carID in carTracker.keys():
+                for carID in carTracker:
                     trackedPosition = carTracker[carID].get_position()
 
                     t_x = int(trackedPosition.left())
@@ -107,7 +106,7 @@ def trackMultipleObjects():
 
         # cv2.line(resultImage,(0,480),(1280,480),(255,0,0),5)
 
-        for carID in carTracker.keys():
+        for carID in carTracker:
             trackedPosition = carTracker[carID].get_position()
 
             t_x = int(trackedPosition.left())
@@ -127,7 +126,7 @@ def trackMultipleObjects():
 
         # cv2.putText(resultImage, 'FPS: ' + str(int(fps)), (620, 30),cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
 
-        for i in carLocation1.keys():
+        for i in carLocation1:
             if frameCounter % 1 == 0:
                 [x1, y1, w1, h1] = carLocation1[i]
                 [x2, y2, w2, h2] = carLocation2[i]
@@ -137,11 +136,11 @@ def trackMultipleObjects():
 
                 # print 'new previous location: ' + str(carLocation1[i])
                 if [x1, y1, w1, h1] != [x2, y2, w2, h2]:
-                    if (speed[i] == None or speed[i] == 0) and y1 >= 275 and y1 <= 285:
+                    if (speed[i] is None or speed[i] == 0) and y1 >= 275 and y1 <= 285:
                         speed[i] = estimateSpeed([x1, y1, w1, h1], [x2, y2, w2, h2])
 
                     # if y1 > 275 and y1 < 285:
-                    if speed[i] != None and y1 >= 180:
+                    if speed[i] is not None and y1 >= 180:
                         cv2.putText(resultImage, str(int(speed[i])) + " km/hr", (int(x1 + w1 / 2), int(y1 - 5)),
                                     cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255, 255, 255), 2)
 
