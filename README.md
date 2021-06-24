@@ -26,7 +26,7 @@
 
 3) This solution will ensure that vehicles do not cross a speed limit, so as to minimize accidents with animals, who cross the road, especially during monsoon.
 
-4) For nighttime use (outside the scope of this tutorial), we may need infrared cameras and infrared lights and/or adjustments to our camera parameters.
+4) For nighttime use , we may need infrared cameras and infrared lights and/or adjustments to our camera parameters.
 
 ### Ouick Start
 - Clone this repository.
